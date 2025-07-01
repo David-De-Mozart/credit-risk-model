@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import List, Dict, Optional
 
+
 class Transaction(BaseModel):
     TransactionId: str
     AccountId: str
@@ -17,8 +18,10 @@ class Transaction(BaseModel):
     PricingStrategy: Optional[str] = None
     FraudResult: Optional[int] = None
 
+
 class PredictionRequest(BaseModel):
     transactions: List[Transaction]
+
 
 class PredictionResponse(BaseModel):
     customer_id: str
